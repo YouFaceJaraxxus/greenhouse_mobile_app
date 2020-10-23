@@ -1,21 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import MainApp from './components/MainApp';
+import LoginScreen from './components/LoginScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Tab = createMaterialTopTabNavigator();
+
+
+
+
+class App extends Component {
+  
+
+  render(){
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="LoginScreen">
+          <Stack.Screen 
+            name="LoginScreen" 
+            component={LoginScreen} 
+            options={{ title: 'Login' }}
+          />
+          <Stack.Screen 
+            name="MainApp" 
+            component={MainApp}
+            options={{ title: 'E-greenhouse' }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default App;
+
+const Stack = createStackNavigator();

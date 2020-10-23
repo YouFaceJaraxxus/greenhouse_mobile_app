@@ -1,12 +1,17 @@
 {
   "expo": {
-    "name": "temp-hum-mobile-app",
-    "slug": "temp-hum-mobile-app",
+    "name": "E-Greenhouse",
+    "slug": "e_greenhouse",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/greenhouse_logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/greenhouse_logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,8 +24,10 @@
     "ios": {
       "supportsTablet": true
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "description": "A smart greenhouse mobile application developed by YouFaceJaraxxus",
+	"android": {
+	  "package": "com.etfbl.net",
+	  "versionCode": 1
+	}
   }
 }
